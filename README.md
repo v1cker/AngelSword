@@ -4,21 +4,7 @@ AngelSword是由python3编写的简易的cms漏洞检测框架。旨在帮助有
 
 
 # 使用用法
-python3 AngelSword.py -u http://www.example.com 对url执行所有poc检测(暴力)                            
-
-python3 AngelSword.py -l 列出所有poc
-
-python3 AngelSword.py -s live800  搜索出live800的相关poc
-
-python3 AngelSword.py -m live800_downlog_filedownload -t http://www.example.com 单一目标执行live800 download任意文件下载漏洞检测
-
-python3 AngelSword.py -m live800_downlog_filedownload -f vuln.txt 对vuln.txt中的所有url执行live800 downlog任意文件下载漏洞检测
-
-python3 AngelSword.py -m live800_downlog_filedownload -e 调用系统中的vim编辑poc文件
-
-python3 AngelSword.py -v 显示静态统计
-
-python3 AngelSword.py -c poc路径校验
+![image](./images/angelsword.png)
 
 
 
@@ -27,19 +13,18 @@ MAC Linux
 
 
 
-# 需要用的到的模块
-bs4
-json
-urllib
-pexpect
-termcolor
-hashlib
-telnetlib
-pymysql
-
+# 需要用到的模块
+requirements.txt
 
 # 说明
-部分代码参考网上公开的脚本
+1.部分代码参考网上公开的脚本。
+
+2.本工具仅限于进行漏洞验证，如若因此引起相关法律问题，概不负责。
+
+3.所有POC均为开源，以后也一直如此，供大家参考和学习。如果有提供POC的朋友可以私发👇👇邮箱。
+
+# 增加功能
+[+] 增加针对登录后的poc检测，在AngelSword目录下新建cookies.txt文件，将Cookie的值粘贴进去。维持cookie的poc带有标识"需要cookies文件"。
 
 # bugs
 hanmengzi1993@gmail.com

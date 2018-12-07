@@ -23,11 +23,13 @@ class jeecms_fpath_filedownload_BaseVerify:
         vulnurl = self.url + payload
         try:
             req = requests.get(vulnurl, headers=headers, timeout=10, verify=False)
-            if r"<?xml version=" in req.text:
+            if req.headers["Content-Type"] == "application/xml":
                 cprint("[+]存在jeecms download.jsp 参数fpath任意文件下载漏洞...(高危)\tpayload: "+vulnurl, "red")
+            else:
+                cprint("[-]不存在jeecms_fpath_filedownload漏洞", "white", "on_grey")
 
         except:
-            cprint("[-] "+__file__+"====>连接超时", "cyan")
+            cprint("[-] "+__file__+"====>可能不存在漏洞", "cyan")
 
 if __name__ == "__main__":
     warnings.filterwarnings("ignore")

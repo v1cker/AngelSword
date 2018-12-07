@@ -7,6 +7,7 @@ author: Lucifer
 description: 文件中focus.swf存在flashxss。
 '''
 import sys
+import urllib
 import hashlib
 import requests
 import warnings
@@ -24,14 +25,16 @@ class discuz_focus_flashxss_BaseVerify:
         payload = "/static/image/common/focus.swf"
         vulnurl = self.url + payload
         try:
-            req = requests.get(vulnurl, headers=headers, timeout=10, verify=False)
-            md5_value = hashlib.md5(req.text.encode(encoding='utf-8')).hexdigest()
+            req = urllib.request.urlopen(vulnurl)
+            data = req.read()
+            md5_value = hashlib.md5(data).hexdigest()
             if md5_value in flash_md5:
                 cprint("[+]存在discuz X3 focus.swf flashxss漏洞...(高危)\tpayload: "+vulnurl, "red")
+            else:
+                cprint("[-]不存在discuz_focus_flashxss漏洞", "white", "on_grey")
 
-        except Exception as e:
-            print(e)
-            cprint("[-] "+__file__+"====>连接超时", "cyan")
+        except:
+            cprint("[-] "+__file__+"====>可能不存在漏洞", "cyan")
 
 if __name__ == "__main__":
     warnings.filterwarnings("ignore")

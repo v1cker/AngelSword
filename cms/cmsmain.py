@@ -6,8 +6,29 @@ referer: unknow
 author: Lucifer
 description: 包含所有cms漏洞类型，封装成一个模块
 '''
+
+#泛微
+from cms.weaver_oa.weaver_oa_download_sqli import weaver_oa_download_sqli_BaseVerify
+from cms.weaver_oa.weaver_oa_db_disclosure import weaver_oa_db_disclosure_BaseVerify
+from cms.weaver_oa.weaver_oa_filedownload import weaver_oa_filedownload_BaseVerify
+
+#phpok vulns
+from cms.phpok.phpok_res_action_control_filedownload import phpok_res_action_control_filedownload_BaseVerify
+from cms.phpok.phpok_api_param_sqli import phpok_api_param_sqli_BaseVerify
+from cms.phpok.phpok_remote_image_getshell import phpok_remote_image_getshell_BaseVerify
+
+#typecho vuls
+from cms.typecho.typecho_install_code_exec import typecho_install_code_exec_BaseVerify
+
+#foosun vuls
+from cms.foosun.foosun_City_ajax_sqli import foosun_City_ajax_sqli_BaseVerify
+
 #autoset vuls
 from cms.autoset.autoset_phpmyadmin_unauth import autoset_phpmyadmin_unauth_BaseVerify
+
+#phpstudy vuls
+from cms.phpstudy.phpstudy_probe import phpstudy_probe_BaseVerify
+from cms.phpstudy.phpstudy_phpmyadmin_defaultpwd import phpstudy_phpmyadmin_defaultpwd_BaseVerify
 
 #Hishop vulns
 from cms.Hishop.hishop_productlist_sqli import hishop_productlist_sqli_BaseVerify
@@ -27,6 +48,8 @@ from cms.ecshop.ecshop_flow_orderid_sqli import ecshop_flow_orderid_sqli_BaseVer
 #discuz! vulns
 from cms.discuz.discuz_forum_message_ssrf import discuz_forum_message_ssrf_BaseVerify
 from cms.discuz.discuz_focus_flashxss import discuz_focus_flashxss_BaseVerify
+from cms.discuz.discuz_x25_path_disclosure import discuz_x25_path_disclosure_BaseVerify
+from cms.discuz.discuz_plugin_ques_sqli import discuz_plugin_ques_sqli_BaseVerify
 
 #亿邮 vulns
 from cms.eyou.eyou_weakpass import eyou_weakpass_BaseVerify
@@ -70,6 +93,7 @@ from cms.live800.live800_downlog_filedownload import live800_downlog_filedownloa
 from cms.live800.live800_loginAction_sqli import live800_loginAction_sqli_BaseVerify
 from cms.live800.live800_sta_export_sqli import live800_sta_export_sqli_BaseVerify
 from cms.live800.live800_services_xxe import live800_services_xxe_BaseVerify
+from cms.live800.live800_fileDownloadServer_fileread import live800_fileDownloadServer_fileread_BaseVerify
 
 #thinkphp vulns
 from cms.thinkphp.onethink_category_sqli import onethink_category_sqli_BaseVerify
@@ -107,6 +131,8 @@ from cms.yonyou.yonyou_u8_CmxItem_sqli import yonyou_u8_CmxItem_sqli_BaseVerify
 from cms.yonyou.yonyou_fe_treeXml_sqli import yonyou_fe_treeXml_sqli_BaseVerify
 from cms.yonyou.yonyou_ehr_resetpwd_sqli import yonyou_ehr_resetpwd_sqli_BaseVerify
 from cms.yonyou.yonyou_nc_NCFindWeb_fileread import yonyou_nc_NCFindWeb_fileread_BaseVerify
+from cms.yonyou.yonyou_a8_logs_disclosure import yonyou_a8_logs_disclosure_BaseVerify
+from cms.yonyou.yonyou_status_default_pwd import yonyou_status_default_pwd_BaseVerify
 
 #v2tech vulns
 from cms.v2tech.v2Conference_sqli_xxe import v2Conference_sqli_xxe_BaseVerify
@@ -117,6 +143,9 @@ from cms.digital_campus.digital_campus_systemcodelist_sqli import digital_campus
 
 #jeecms vulns
 from cms.jeecms.jeecms_fpath_filedownload import jeecms_fpath_filedownload_BaseVerify
+
+#jeecg vulns
+from cms.jeecg.jeecg_pwd_reset import jeecg_pwd_reset_BaseVerify
 
 #shopex vulns
 from cms.shopex.shopex_phpinfo_disclosure import shopex_phpinfo_disclosure_BaseVerify
@@ -136,6 +165,8 @@ from cms.php168.php168_login_getshell import php168_login_getshell_BaseVerify
 from cms.dedecms.dedecms_version import dedecms_version_BaseVerify
 from cms.dedecms.dedecms_recommend_sqli import dedecms_recommend_sqli_BaseVerify
 from cms.dedecms.dedecms_download_redirect import dedecms_download_redirect_BaseVerify
+from cms.dedecms.dedecms_error_trace_disclosure import dedecms_error_trace_disclosure_BaseVerify
+from cms.dedecms.dedecms_search_typeArr_sqli import dedecms_search_typeArr_sqli_BaseVerify
 
 #umail vulns
 from cms.umail.umail_physical_path import umail_physical_path_BaseVerify
@@ -173,6 +204,7 @@ from cms.wordpress.wordpress_woocommerce_code_exec import wordpress_woocommerce_
 from cms.wordpress.wordpress_plugin_mailpress_rce import wordpress_plugin_mailpress_rce_BaseVerify
 from cms.wordpress.wordpress_admin_ajax_filedownload import wordpress_admin_ajax_filedownload_BaseVerify
 from cms.wordpress.wordpress_restapi_sqli import wordpress_restapi_sqli_BaseVerify
+from cms.wordpress.wordpress_display_widgets_backdoor import wordpress_display_widgets_backdoor_BaseVerify
 
 #票友 vulns
 from cms.piaoyou.piaoyou_multi_sqli import piaoyou_multi_sqli_BaseVerify
@@ -211,6 +243,7 @@ from cms.jumboecms.jumboecms_slide_id_sqli import jumboecms_slide_id_sqli_BaseVe
 
 #joomla vulns
 from cms.joomla.joomla_com_docman_lfi import joomla_com_docman_lfi_BaseVerify
+from cms.joomla.joomla_index_list_sqli import joomla_index_list_sqli_BaseVerify
 
 #360shop vulns
 from cms.shop360.shop360_do_filedownload import shop360_do_filedownload_BaseVerify
@@ -232,6 +265,8 @@ from cms.trs.trs_wcm_infoview_disclosure import trs_wcm_infoview_disclosure_Base
 from cms.trs.trs_was40_passwd_disclosure import trs_was40_passwd_disclosure_BaseVerify
 from cms.trs.trs_was40_tree_disclosure import trs_was40_tree_disclosure_BaseVerify
 from cms.trs.trs_ids_auth_disclosure import trs_ids_auth_disclosure_BaseVerify
+from cms.trs.trs_was5_download_templet import trs_was5_download_templet_BaseVerify
+from cms.trs.trs_wcm_service_writefile import trs_wcm_service_writefile_BaseVerify
 
 #易创思 vulns
 from cms.ecscms.ecscms_MoreIndex_sqli import ecscms_MoreIndex_sqli_BaseVerify
@@ -308,10 +343,14 @@ from cms.phpcms.phpcms_digg_add_sqli import phpcms_digg_add_sqli_BaseVerify
 from cms.phpcms.phpcms_authkey_disclosure import phpcms_authkey_disclosure_BaseVerify
 from cms.phpcms.phpcms_flash_upload_sqli import phpcms_flash_upload_sqli_BaseVerify
 from cms.phpcms.phpcms_product_code_exec import phpcms_product_code_exec_BaseVerify
+from cms.phpcms.phpcms_v96_sqli import phpcms_v96_sqli_BaseVerify
+from cms.phpcms.phpcms_v961_fileread import phpcms_v961_fileread_BaseVerify
+from cms.phpcms.phpcms_v9_flash_xss import phpcms_v9_flash_xss_BaseVerify
 
 #seacms vulns
 from cms.seacms.seacms_search_code_exec import seacms_search_code_exec_BaseVerify
 from cms.seacms.seacms_order_code_exec import seacms_order_code_exec_BaseVerify
+from cms.seacms.seacms_search_jq_code_exec import seacms_search_jq_code_exec_BaseVerify
 
 #cmseasy vulns
 from cms.cmseasy.cmseasy_header_detail_sqli import cmseasy_header_detail_sqli_BaseVerify
@@ -322,6 +361,9 @@ from cms.phpmyadmin.phpmyadmin_setup_lfi import phpmyadmin_setup_lfi_BaseVerify
 #opensns vulns
 from cms.opensns.opensns_index_arearank import opensns_index_arearank_BaseVerify
 from cms.opensns.opensns_index_getshell import opensns_index_getshell_BaseVerify
+
+#thinksns vulns
+from cms.thinksns.thinksns_category_code_exec import thinksns_category_code_exec_BaseVerify
 
 #others vulns
 from cms.others.domino_unauth import domino_unauth_BaseVerify
@@ -382,3 +424,4 @@ from cms.others.xuezi_ceping_unauth import xuezi_ceping_unauth_BaseVerify
 from cms.others.haohan_FileDown_filedownload import haohan_FileDown_filedownload_BaseVerify
 from cms.others.mingteng_cookie_deception import mingteng_cookie_deception_BaseVerify
 from cms.others.jxt1039_unauth import jxt1039_unauth_BaseVerify
+from cms.others.tpshop_eval_stdin_code_exec import tpshop_eval_stdin_code_exec_BaseVerify
